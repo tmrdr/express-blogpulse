@@ -47,7 +47,7 @@ router.get('/:id', function(req, res) {
 // New comment
 router.post('/:id', function(req, res){
   db.comment.create({
-    name: req.body.name,
+    name: req.body.name || 'Anonymous',
     content: req.body.content,
     postId: req.params.id
   })
