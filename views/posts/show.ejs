@@ -6,6 +6,28 @@
 
 <p><%= post.content %></p>
 
+<h1>Add a new comment</h1>
+
+<form action="/posts/<%= post.id %>" method="POST">
+
+  <div class="form-group">
+    <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="content">Content</label>
+    <textarea type="text" class="form-control" id="content" name="content" required></textarea>
+  </div>
+
+  <input type="submit" class="btn btn-primary">
+</form>
+
+<% for(var i=0; i<post.comments.length; i++) {%>
+   <p><h3><%= post.comments[i].name %></h3>
+   <%= post.comments[i].content %></p>
+<% } %>
+
 <hr />
 
 <a href="/">&larr; Back Home</a>

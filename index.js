@@ -32,6 +32,14 @@ app.get('/', function(req, res) {
   });
 });
 
+// app.get('/', function(req, res) {
+//   db.post.findAll({
+//     include: [db.author, db.comment]
+//   })
+//   .then(function(posts) {
+//     res.render('main/index', { posts: posts });
+//   })
+
 // bring in authors and posts controllers
 app.use('/authors', require('./controllers/authors'));
 app.use('/posts', require('./controllers/posts'));
